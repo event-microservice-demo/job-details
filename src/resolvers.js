@@ -9,7 +9,7 @@ const findJob = (id, context) => {
 // Resolvers
 const resolvers = {
   Query: {
-    job: (_, { id }, context) => findJob(id, context)
+    jobById: (_, { id }, context) => findJob(id, context)
   }
 };
 
