@@ -17,8 +17,8 @@ const typeDefs = gql`
   type Company { 
     id: String!
     name: String!
-    headquarters: Location
-    description: String!
+    location: Location
+    description: String
   }
   type Job { 
     id: String! 
