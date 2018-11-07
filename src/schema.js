@@ -3,7 +3,7 @@ const { gql } = require('apollo-server-express')
 
 const typeDefs = gql`
   type Query { 
-    jobById(id: String): Job
+    jobByUrn(urn: String): Job
   }
   type Salary {
     amount: Int!
@@ -15,13 +15,13 @@ const typeDefs = gql`
     country: String!
   }
   type Company { 
-    id: String!
+    urn: String!
     name: String!
     location: Location
     description: String
   }
   type Job { 
-    id: String! 
+    urn: String! 
     title: String!  
     company: Company
     location: Location

@@ -1,13 +1,13 @@
-const findJob = (id, context) => {
-  return context.collection('jobs').find({'id': id}).toArray()
+const findJob = (urn, context) => {
+  return context.collection('jobs').find({'urn': urn}).toArray()
     .then(result => {
       console.log(result[0])
       return result[0]
     })
 }
 
-const findCompany = (id, context) => {
-  return context.collection('companies').find({'id': id}).toArray()
+const findCompany = (urn, context) => {
+  return context.collection('companies').find({'urn': urn}).toArray()
     .then(result => {
       console.log(result[0])
       return result[0]
@@ -18,7 +18,7 @@ const findCompany = (id, context) => {
 // Resolvers
 const resolvers = {
   Query: {
-    jobById: (_, { id }, context) => findJob(id, context)
+    jobByUrn: (_, { urn }, context) => findJob(urn, context)
   },
   Job: {
     company: (parent, _, context) => findCompany(parent.companyId, context)
